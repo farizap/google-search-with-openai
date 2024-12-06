@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Network Interceptor Example",
+  "version": "1.0",
+  "description": "Intercepts network requests to Google Search.",
+  "permissions": ["activeTab", "declarativeNetRequest", "declarativeNetRequestWithHostAccess"],
+  "host_permissions": ["https://www.google.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
